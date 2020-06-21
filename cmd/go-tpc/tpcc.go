@@ -98,7 +98,7 @@ func registerTpcc(root *cobra.Command) {
 		Use:   "check",
 		Short: "Check data consistency for the workload",
 		Run: func(cmd *cobra.Command, _ []string) {
-			executeTpcc("check")
+			//executeTpcc("check")
 		},
 	}
 
