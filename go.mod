@@ -1,4 +1,4 @@
-module github.com/pingcap/go-tpc
+module github.com/vaintroub/go-tpc
 
 go 1.13
 

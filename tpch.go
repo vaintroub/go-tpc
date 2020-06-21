@@ -4,7 +4,7 @@ import (
 	"context"
 	"strings"
 
-	"github.com/pingcap/go-tpc/tpch"
+	"github.com/vaintroub/go-tpc/tpch"
 	"github.com/spf13/cobra"
 )
 
@@ -61,7 +61,7 @@ func registerTpch(root *cobra.Command) {
 		"analyze",
 		false,
 		"After data loaded, analyze table to collect column statistics")
-	// https://pingcap.com/docs/stable/reference/performance/statistics/#control-analyze-concurrency
+	// https://vaintroub.com/docs/stable/reference/performance/statistics/#control-analyze-concurrency
 	cmdPrepare.PersistentFlags().IntVar(&tpchConfig.AnalyzeTable.BuildStatsConcurrency,
 		"tidb_build_stats_concurrency",
 		4,

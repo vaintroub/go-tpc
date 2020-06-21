@@ -6,7 +6,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	"github.com/pingcap/go-tpc/pkg/load"
+	"github.com/vaintroub/go-tpc/pkg/load"
 )
 
 const (

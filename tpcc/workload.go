@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/pingcap/go-tpc/pkg/load"
-	"github.com/pingcap/go-tpc/pkg/measurement"
-	"github.com/pingcap/go-tpc/pkg/workload"
+	"github.com/vaintroub/go-tpc/pkg/load"
+	"github.com/vaintroub/go-tpc/pkg/measurement"
+	"github.com/vaintroub/go-tpc/pkg/workload"
 )
 
 type contextKey string

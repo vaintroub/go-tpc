@@ -8,8 +8,8 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/pingcap/go-tpc/pkg/workload"
-	"github.com/pingcap/go-tpc/tpcc"
+	"github.com/vaintroub/go-tpc/pkg/workload"
+	"github.com/vaintroub/go-tpc/tpcc"
 	"github.com/spf13/cobra"
 )
 

@@ -8,9 +8,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pingcap/go-tpc/pkg/measurement"
-	"github.com/pingcap/go-tpc/pkg/workload"
-	"github.com/pingcap/go-tpc/tpch/dbgen"
+	"github.com/vaintroub/go-tpc/pkg/measurement"
+	"github.com/vaintroub/go-tpc/pkg/workload"
+	"github.com/vaintroub/go-tpc/tpch/dbgen"
 )
 
 type contextKey string
