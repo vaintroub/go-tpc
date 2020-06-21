@@ -28,7 +28,6 @@ func (w *Workloader) check(ctx context.Context, threadID int, checkAll bool) err
 		"3.3.2.7":  w.checkCondition7,
 		"3.3.2.8":  w.checkCondition8,
 		"3.3.2.9":  w.checkCondition9,
-		"3.3.2.10": w.checkCondition10,
 		"3.3.2.12": w.checkCondition12,
 	}
 
