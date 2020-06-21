@@ -85,7 +85,7 @@ func main() {
 	rootCmd.PersistentFlags().IntVar(&maxProcs, "max-procs", 0, "runtime.GOMAXPROCS")
 	rootCmd.PersistentFlags().StringVar(&pprofAddr, "pprof", "", "Address of pprof endpoint")
 	rootCmd.PersistentFlags().StringVarP(&dbName, "db", "D", "test", "Database name")
-	rootCmd.PersistentFlags().StringVarP(&host, "host", "H", "127.0.0.1", "Database host")
+	rootCmd.PersistentFlags().StringVarP(&host, "host", "H", "localhost", "Database host")
 	rootCmd.PersistentFlags().StringVarP(&user, "user", "U", "root", "Database user")
 	rootCmd.PersistentFlags().StringVarP(&password, "password", "p", "", "Database password")
 	rootCmd.PersistentFlags().IntVarP(&port, "port", "P", 4000, "Database port")
