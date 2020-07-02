@@ -11,9 +11,6 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
-
-	// mysql package
-	_ "github.com/go-sql-driver/mysql"
 )
 
 var (
@@ -33,6 +30,7 @@ var (
 	silence        bool
 	pprofAddr      string
 	maxProcs       int
+	socket         string
 
 	globalDB  *sql.DB
 	globalCtx context.Context
@@ -54,7 +52,14 @@ func closeDB() {
 func openDB() {
 	// TODO: support other drivers
 	var tmpDB *sql.DB
-	ds := fmt.Sprintf("%s:%s@tcp(%s:%d)/", user, password, host, port)
+	var ds string
+
+	if socket != "" {
+		RegisterSocketDial()
+		ds = fmt.Sprintf("%s:%s@socket(%s)/",  user, password, socket)
+	} else {
+		ds = fmt.Sprintf("%s:%s@tcp(%s:%d)/",  user, password, host, port)
+	}
 	dsn := ds + dbName
 	var err error
 	globalDB, err = sql.Open(mysqlDriver, dsn)
@@ -100,6 +105,8 @@ func main() {
 	rootCmd.PersistentFlags().IntVar(&isolationLevel, "isolation", 0, `Isolation Level 0: Default, 1: ReadUncommitted, 
 2: ReadCommitted, 3: WriteCommitted, 4: RepeatableRead, 
 5: Snapshot, 6: Serializable, 7: Linerizable`)
+	rootCmd.PersistentFlags().StringVarP(&socket, "socket", "S","", "socket or named pipe name. if set, used instead of TCP")
+
 
 	cobra.EnablePrefixMatching = true
 
